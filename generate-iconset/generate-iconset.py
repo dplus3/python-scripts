@@ -46,6 +46,12 @@ ListOfIconParameters = [
     IconParameters(64, 2),
     IconParameters(128, 1),
     IconParameters(128, 2),
+    IconParameters(150, 1), # MS Tile
+    IconParameters(150, 2),
+    IconParameters(180, 1), # web - apple touch
+    IconParameters(180, 2),
+    IconParameters(192, 1), # chrome / android
+    IconParameters(192, 2),
     IconParameters(256, 1),
     IconParameters(256, 2),
     IconParameters(512, 1),
@@ -59,19 +65,19 @@ for ip in ListOfIconParameters:
     subprocess.call(
         [
             # option 1: sips
-            #"sips",
-            #"-z",
-            #str(ip.width),
-            #str(ip.width),
-            #originalPicture,
-            #"--out",
+            "sips",
+            "-z",
+            str(ip.width),
+            str(ip.width),
+            originalPicture,
+            "--out",
 
             # option 2: ImageMagick
-            "magick",
-            "convert",
-            originalPicture,
-            "-resize",
-            str(ip.width),
+            #"magick",
+            #"convert",
+            #originalPicture,
+            #"-resize",
+            #str(ip.width),
 
             os.path.join(iconsetDir, ip.getIconName())
         ]
